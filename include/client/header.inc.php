@@ -156,7 +156,7 @@ if ($lang) {
                             <?php
                             } elseif($nav) {
                                 if ($cfg->getClientRegistrationMode() == 'public') { ?>
-                                    <li><a href="#">
+                                    <li class="disabled"><a href="#">
                                     <?php echo __('Guest User'); ?></a></li><?php
                                 }
                                 if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
