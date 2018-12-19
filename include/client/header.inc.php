@@ -29,7 +29,37 @@ if ($lang) {
     <title><?php echo Format::htmlchars($title); ?></title>
     <meta name="description" content="customer support platform">
     <meta name="keywords" content="osTicket, Customer support system, support ticket system">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/skins/skin-blue.min.css">
+    <!-- Pace style -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/plugins/pace/pace.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/fonts/font.css">
+
+    <!-- jQuery 3 -->
+    <script src="<?php echo ROOT_PATH; ?>assets/adminlte/components/jquery/dist/jquery.min.js"></script>
+    <!-- jQueryMigrate -->
+    <script src="<?php echo ROOT_PATH; ?>assets/adminlte/js/jquery-migrate-3.0.1.min.js"></script>
+
 	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/osticket.css?035fd0a" media="screen"/>
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/theme.css?035fd0a" media="screen"/>
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/print.css?035fd0a" media="print"/>
@@ -43,7 +73,7 @@ if ($lang) {
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?035fd0a"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css?035fd0a"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css?035fd0a"/>
-    <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-1.11.2.min.js?035fd0a"></script>
+    <!--<script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-1.11.2.min.js?035fd0a"></script>-->
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.10.3.custom.min.js?035fd0a"></script>
     <script src="<?php echo ROOT_PATH; ?>js/osticket.js?035fd0a"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/filedrop.field.js?035fd0a"></script>
@@ -78,7 +108,8 @@ if ($lang) {
     }
     ?>
 </head>
-<body>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
     <div id="container">
         <div id="header">
             <div class="pull-right flush-right">
