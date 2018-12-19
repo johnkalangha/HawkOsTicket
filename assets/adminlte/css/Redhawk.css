@@ -1,0 +1,29 @@
+.brandlogo-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: -2px;
+    background-color: #ffffff;
+}
+
+#navbar-collapse ul li a {
+    padding-left: 32px;
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
+}
+#navbar-collapse ul li a.home {
+    background-image: url('../../default/images/icons/home.png');
+}
+#navbar-collapse ul li a.kb{
+    background-image: url('../../default/images/icons/kb.png');
+}
+#navbar-collapse ul li a.new {
+    background-image: url('../../default/images/icons/new.png');
+}
+#navbar-collapse ul li a.status{
+    background-image: url('../../default/images/icons/status.png');
+}
+#navbar-collapse ul li a.tickets{
+    background-image: url('../../default/images/icons/tix.png');
+}

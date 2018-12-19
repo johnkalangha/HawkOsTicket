@@ -1,3 +1,4 @@
+
         </div>
     </div>
     <div id="footer">
@@ -25,6 +26,8 @@ if (($lang = Internationalization::getCurrentLanguage()) && $lang != 'en_US') { 
 <script src="<?php echo ROOT_PATH; ?>assets/adminlte/js/adminlte.min.js"></script>
 <!-- PACE -->
 <script src="<?php echo ROOT_PATH; ?>assets/adminlte/components/PACE/pace.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!--<script src="<?php echo ROOT_PATH; ?>assets/adminlte/js/demo.js"></script>-->
 <script type="text/javascript">
     getConfig().resolve(<?php
         include INCLUDE_DIR . 'ajax.config.php';
