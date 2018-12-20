@@ -14,12 +14,19 @@ if (isset($user) && $user instanceof ClientCreateRequest) {
 $info = Format::htmlchars(($errors && $_POST)?$_POST:$info);
 
 ?>
-<h1><?php echo __('Account Registration'); ?></h1>
-<p><?php echo __(
+<section class="content-header">
+    <h1>
+        <?php echo __('Account Registration'); ?>
+        <small><?php echo __(
 'Use the forms below to create or update the information we have on file for your account'
-); ?>
-</p>
-<form action="account.php" method="post">
+); ?></small>
+    </h1>
+</section>
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-body">
+        <form action="account.php" method="post">
   <?php csrf_token(); ?>
   <input type="hidden" name="do" value="<?php echo Format::htmlchars($_REQUEST['do']
     ?: ($info['backend'] ? 'import' :'create')); ?>" />
@@ -97,6 +104,11 @@ $info = Format::htmlchars(($errors && $_POST)?$_POST:$info);
         window.location.href='index.php';"/>
 </p>
 </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</section>
 <?php if (!isset($info['timezone'])) { ?>
 <!-- Auto detect client's timezone where possible -->
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jstz.min.js?035fd0a"></script>
