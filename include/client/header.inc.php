@@ -74,7 +74,9 @@ if ($lang) {
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/font-awesome.min.css?035fd0a"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?035fd0a"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css?035fd0a"/>
-    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css?035fd0a"/>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/components/select2/dist/css/select2.min.css">
+    <!--<link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css?035fd0a"/>-->
     <!--<script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-1.11.2.min.js?035fd0a"></script>-->
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.10.3.custom.min.js?035fd0a"></script>
     <script src="<?php echo ROOT_PATH; ?>js/osticket.js?035fd0a"></script>
@@ -83,7 +85,9 @@ if ($lang) {
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor.min.js?035fd0a"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-plugins.js?035fd0a"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-osticket.js?035fd0a"></script>
-    <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/select2.min.js?035fd0a"></script>
+    <!-- Select2 -->
+    <script src="<?php echo ROOT_PATH; ?>assets/adminlte/components/select2/dist/js/select2.full.min.js"></script>
+    <!--<script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/select2.min.js?035fd0a"></script>-->
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/fabric.min.js?035fd0a"></script>
     <?php
     if($ost && ($headers=$ost->getExtraHeaders())) {

@@ -14,19 +14,17 @@ if (isset($user) && $user instanceof ClientCreateRequest) {
 $info = Format::htmlchars(($errors && $_POST)?$_POST:$info);
 
 ?>
-<section class="content-header">
-    <h1>
-        <?php echo __('Account Registration'); ?>
-        <small><?php echo __(
-            'Use the forms below to create or update the information we have on file for your account'
-        ); ?></small>
-    </h1>
-</section>
 <section class="content">
     <form action="account.php" method="post">
     <?php csrf_token(); ?>
     <div class="row">
         <div class="box">
+        <div class="box-header with-border">
+            <h2 class="box-title"><?php echo __('Account Registration'); ?>
+            <small><?php echo __(
+            'Use the forms below to create or update the information we have on file for your account'
+        ); ?></small></h2>
+        </div>
         <div class="box-body">
         <!-- Left Column -->
         <div class="col-md-6">

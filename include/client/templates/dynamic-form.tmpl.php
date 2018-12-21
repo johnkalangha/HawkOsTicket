@@ -28,7 +28,7 @@
                     if ($field->isRequiredForUsers()) echo 'required'; ?>">
                         <?php echo Format::htmlchars($field->getLocal('label')); ?>
                     <?php if ($field->isRequiredForUsers()) { ?>
-                        <span class="error">*</span>
+                        <span class="text-red error">*</span>
                     <?php }
                 ?></span><?php
                 if ($field->get('hint')) { ?>
@@ -43,7 +43,7 @@
             ?></label>
             <?php
             foreach ($field->errors() as $e) { ?>
-                <div class="error"><?php echo $e; ?></div>
+                <div class="text-red error"><?php echo $e; ?></div>
             <?php }
             $field->renderExtras(array('client'=>true));
             ?>

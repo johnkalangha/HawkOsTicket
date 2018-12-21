@@ -15,16 +15,12 @@ if ($content) {
 }
 
 ?>
-<section class="content-header">
-    <h1>
-        <?php echo Format::display($title); ?>
-    </h1>
-</section>
 <section class="content">
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title"><?php echo Format::display($body); ?></h3>
+            <h2 class="box-title"><?php echo Format::display($title); ?>
+            <small><?php echo Format::display($body); ?></small></h2>
         </div>
         <div class="box-body">
             <form action="login.php" method="post" id="clientLogin">
