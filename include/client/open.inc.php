@@ -86,11 +86,13 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                             </select>
                             
                         </div>
+                        <div id="dynamic-form">
                         <?php foreach ($forms as $form) { ?>
                             <div class="box">
                                 <?php include(CLIENTINC_DIR . 'templates/dynamic-form.tmpl.php'); ?>
                             </div>
                         <?php } ?>
+                        </div>
                         <?php
                             if($cfg && $cfg->isCaptchaEnabled() && (!$thisclient || !$thisclient->isValid())) {
                                 if($_POST && $errors && !$errors['captcha'])

@@ -45,7 +45,7 @@ require(CLIENTINC_DIR.'header.inc.php');
                         <input type="hidden" name="a" value="search"/>
                         <input type="text" name="q" class="form-control" placeholder="<?php echo __('Search our knowledge base'); ?>">
                         <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat" data-toggle="modal" data-target="#myload"><i class="fa fa-search"></i>
                             </button>
                         </span>
                     </div>

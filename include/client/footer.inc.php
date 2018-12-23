@@ -11,11 +11,27 @@
         </div>
         <!-- /.container -->
     </footer>
-<div id="overlay"></div>
-<div id="loading">
-    <h4><?php echo __('Please Wait!');?></h4>
-    <p><?php echo __('Please wait... it will take a second!');?></p>
-</div>
+    <div class="modal fade" id="myload" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <img class="center-block centered" src="<?php echo ROOT_PATH; ?>images/FhHRx-Spinner.gif"/>
+                        </div>
+                        <div class="col-md-8">
+                            <h4><?php echo __('Please Wait!');?></h4>
+                            <p><?php echo __('Please wait... it will take a second!');?></p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 </div>
 <?php
 if (($lang = Internationalization::getCurrentLanguage()) && $lang != 'en_US') { ?>

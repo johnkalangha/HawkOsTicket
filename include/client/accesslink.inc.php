@@ -25,24 +25,22 @@ else
         <div class="box-body">
             <form action="login.php" method="post" id="clientLogin">
             <?php csrf_token(); ?>
-            <div style="display:table-row">
-                <div class="login-box">
+            <div class="row">
+                <div class="col-md-6">
                     <div><strong><?php echo Format::htmlchars($errors['login']); ?></strong></div>
-                    <div>
-                        <label for="email"><?php echo __('Email Address'); ?>:
-                        <input id="email" placeholder="<?php echo __('e.g. john.doe@osticket.com'); ?>" type="text"
-                        name="lemail" size="30" value="<?php echo $email; ?>" class="nowarn"></label>
+                    <div class="form-group">
+                        <label for="email"><?php echo __('Email Address'); ?>:</label>
+                        <input class="form-control" id="email" placeholder="<?php echo __('e.g. john.doe@osticket.com'); ?>" type="text"
+                        name="lemail" size="30" value="<?php echo $email; ?>" class="nowarn">
                     </div>
-                    <div>
-                        <label for="ticketno"><?php echo __('Ticket Number'); ?>:
-                        <input id="ticketno" type="text" name="lticket" placeholder="<?php echo __('e.g. 051243'); ?>"
-                        size="30" value="<?php echo $ticketid; ?>" class="nowarn"></label>
+                    <div class="form-group">
+                        <label for="ticketno"><?php echo __('Ticket Number'); ?>:</label>
+                        <input class="form-control" id="ticketno" type="text" name="lticket" placeholder="<?php echo __('e.g. 051243'); ?>"
+                        size="30" value="<?php echo $ticketid; ?>" class="nowarn">
                     </div>
                     <p>
-                        <input class="btn" type="submit" value="<?php echo $button; ?>">
+                        <input class="btn btn-info" type="submit" value="<?php echo $button; ?>">
                     </p>
-                </div>
-                <div class="instructions">
                     <?php if ($cfg && $cfg->getClientRegistrationMode() !== 'disabled') { ?>
                         <?php echo __('Have an account with us?'); ?>
                         <a href="login.php"><?php echo __('Sign In'); ?></a> <?php
@@ -51,7 +49,7 @@ else
                             '<a href="account.php?do=create">','</a>');
                         }
                     }?>
-                </div>
+                </div>   
             </div>
             </form>
         </div>
