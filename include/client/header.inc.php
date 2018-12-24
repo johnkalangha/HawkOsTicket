@@ -46,6 +46,8 @@ if ($lang) {
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/plugins/pace/pace.min.css">
     <!-- RedHawkCustomCss -->
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/Redhawk.css">
+    <!-- Custom Flags -->
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/flags/flag-icon.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,8 +73,8 @@ if ($lang) {
         rel="stylesheet" media="screen" />
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/thread.css?035fd0a" media="screen"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/redactor.css?035fd0a" media="screen"/>
-    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/font-awesome.min.css?035fd0a"/>
-    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?035fd0a"/>
+    <!--<link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/font-awesome.min.css?035fd0a"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?035fd0a"/>-->
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css?035fd0a"/>
     <!-- Select2 -->
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/components/select2/dist/css/select2.min.css">
@@ -150,28 +152,6 @@ if ($lang) {
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <?php
-                            if ($thisclient && is_object($thisclient) && $thisclient->isValid()
-                            && !$thisclient->isGuest()) {
-                                echo Format::htmlchars($thisclient->getName()).'&nbsp;|';
-                            ?>
-                            <li><a href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('Profile'); ?></a></li>
-                            <li><a href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a></li>
-                            <li><a href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a></li>
-                            <?php
-                            } elseif($nav) {
-                                if ($cfg->getClientRegistrationMode() == 'public') { ?>
-                                    <li class="disabled"><a href="#">
-                                    <?php echo __('Guest User'); ?></a></li><?php
-                                }
-                                if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
-                                    <li><a href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a></li><?php
-                                }
-                                elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
-                                    <li><a href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a></li>
-                                    <?php
-                                }
-                            } ?>
-                            <?php
                             if (($all_langs = Internationalization::getConfiguredSystemLanguages())
                                 && (count($all_langs) > 1)
                             ) {
@@ -185,23 +165,74 @@ if ($lang) {
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                    <!-- Inner menu: contains the tasks -->
-                                    <ul class="menu">
-                                    <?php parse_str($_SERVER['QUERY_STRING'], $qs);
-                                    foreach ($all_langs as $code=>$info) {
-                                    list($lang, $locale) = explode('_', $code);
-                                    $qs['lang'] = $code;
-                                    ?>
-                                    <li>
-                                    <a class="flag flag-<?php echo strtolower($locale ?: $info['flag'] ?: $lang); ?>"
-                                    href="?<?php echo http_build_query($qs);
-                                    ?>" title="<?php echo Internationalization::getLanguageDescription($code); ?>"></a>
-                                    </li>
-                                <?php } ?>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                        <?php parse_str($_SERVER['QUERY_STRING'], $qs);
+                                        foreach ($all_langs as $code=>$info) {
+                                            list($lang, $locale) = explode('_', $code);
+                                            $qs['lang'] = $code;
+                                            ?>
+                                            <li>
+                                                <a href="?<?php echo http_build_query($qs);
+                                                ?>" title="<?php echo Internationalization::getLanguageDescription($code); ?>">
+                                                    <span class="flag-icon flag-icon-<?php echo strtolower($locale ?: $info['flag'] ?: $lang); ?>"></span> <?php echo Internationalization::getLanguageDescription($code); ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                        </ul>
                                     </li>
                                 </ul>
-                                </li>
-                           <?php } ?>
+                            <?php } ?>
+                            <?php
+                            if ($thisclient && is_object($thisclient) && $thisclient->isValid()
+                            && !$thisclient->isGuest()) {?>
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="<?php echo ROOT_PATH; ?>images/mystery-oscar.png" class="user-image" alt="User Image">
+                                    <span class="hidden-xs"><?php echo Format::htmlchars($thisclient->getName()); ?></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="<?php echo ROOT_PATH; ?>images/mystery-oscar.png" class="img-circle" alt="User Image">
+                                        <p>
+                                        <?php echo Format::htmlchars($thisclient->getName()); ?>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                                <a href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a>
+                                            </div>
+                                        </div>
+                                        <!-- /.row -->
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="<?php echo ROOT_PATH; ?>profile.php" class="btn btn-default btn-flat"><?php echo __('Profile'); ?></a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="<?php echo $signout_url; ?>" class="btn btn-default btn-flat"><?php echo __('Sign Out'); ?></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                             </li>
+                            <?php
+                            } elseif($nav) {
+                                if ($cfg->getClientRegistrationMode() == 'public') { ?>
+                                    <li class="disabled"><a href="#">
+                                    <?php echo __('Guest User'); ?></a></li><?php
+                                }
+                                if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
+                                    <li><a href="<?php echo $signout_url; ?>" title="<?php echo __('Sign Out'); ?>"><i class="fa fa-sign-out"></i></a></li><?php
+                                }
+                                elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
+                                    <li><a href="<?php echo $signin_url; ?>" title="<?php echo __('Sign In'); ?>"><i class="fa fa-sign-in"></i></a></li>
+                                    <?php
+                                }
+                            } ?>
                         </ul>
                     </div>
                     <!-- /.navbar-custom-menu -->
