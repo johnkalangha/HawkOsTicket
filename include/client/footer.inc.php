@@ -4,7 +4,7 @@
     <footer class="main-footer">
         <div class="container">
             <div class="pull-right hidden-xs">
-                <b>HawkOs by <a href="https://teamredhawk.net" target="_blank">Team RedHawk</a> Version</b> 1.3.0
+                <b>HawkOs Theme AdminLTE by <a href="https://teamredhawk.net" target="_blank">Team RedHawk</a> Version</b> 1.3.7
             </div>
             <strong>Copyright &copy; <?php echo date('Y'); ?> <?php echo (string) $ost->company ?: 'osTicket.com'; ?>.</strong> All rights
             reserved. <a id="poweredBy" href="http://osticket.com" target="_blank"><?php echo __('Helpdesk software - powered by osTicket'); ?></a>

@@ -73,8 +73,8 @@ if ($lang) {
         rel="stylesheet" media="screen" />
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/thread.css?035fd0a" media="screen"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/redactor.css?035fd0a" media="screen"/>
-    <!--<link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/font-awesome.min.css?035fd0a"/>
-    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?035fd0a"/>-->
+    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/font-awesome.min.css?035fd0a"/>
+    <!--<link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?035fd0a"/>-->
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css?035fd0a"/>
     <!-- Select2 -->
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/components/select2/dist/css/select2.min.css">
