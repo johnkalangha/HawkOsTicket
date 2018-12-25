@@ -14,3 +14,14 @@
 /**
  * basic adaptation
  */
+class HelperTheme{
+    function getStatusBag($status){
+        if($status == 'Open'){
+            return '<span class="label label-warning">'.$status.'</span>';
+        }elseif($status == 'Resolved'){
+            return '<span class="label label-success">'.$status.'</span>';
+        }else{
+            return '<span class="label label-danger">'.$status.'</span>';
+        }
+    }
+}
