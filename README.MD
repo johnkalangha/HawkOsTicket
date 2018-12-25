@@ -12,6 +12,16 @@ Clone this repo and put all the files in the root of your osticket installation.
 
 ### Previews Screenshots
 
+![s1](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/c1.PNG)
+
+![s2](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/C2.PNG)
+
+![s3](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/c3.PNG)
+
+![s4](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/c4.PNG)
+
+![s5](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/C5.PNG)
+
 ## Authors
 
 * **Luffynando** - *Initial work*
