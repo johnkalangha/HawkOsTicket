@@ -10,6 +10,8 @@ Before installing please make a copy of your osticket instance. This adaptation 
 
 Clone this repo and put all the files in the root of your osticket installation.
 
+### Previews Screenshots
+
 ## Authors
 
 * **Luffynando** - *Initial work*
