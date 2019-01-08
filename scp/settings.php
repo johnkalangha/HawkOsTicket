@@ -31,6 +31,8 @@ $settingOptions=array(
         array(__('Site Pages'), 'settings.pages'),
     'kb' =>
         array(__('Knowledgebase Settings'), 'settings.kb'),
+    'themes' =>
+        array(__('Themes Settings and Options'), 'settings.themes'),
 );
 //Handle a POST.
 $target=($_REQUEST['t'] && $settingOptions[$_REQUEST['t']])?$_REQUEST['t']:'system';

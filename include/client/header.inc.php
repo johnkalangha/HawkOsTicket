@@ -12,6 +12,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
     $langs = Internationalization::rfc1766($langs);
     header("Content-Language: ".implode(', ', $langs));
 }
+$custom_theme= HelperTheme::getOptions();
 ?>
 <!DOCTYPE html>
 <html<?php
@@ -41,9 +42,12 @@ if ($lang) {
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-
-    <!--<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/skins/skin-blue.min.css">-->
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/skins/_all-skins.min.css">
+    <?php if ($custom_theme['client']['choose']){ ?>
+        <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/skins/_all-skins.min.css">
+    <?php }else{ ?>
+        <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/css/skins/<?php echo $custom_theme['client']['skin']?$custom_theme['client']['skin']:'skin-blue'; ?>.min.css">
+    <?php } ?>
+    <!---->
     <!-- Pace style -->
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/adminlte/plugins/pace/pace.min.css">
     <!-- RedHawkCustomCss -->
@@ -118,7 +122,7 @@ if ($lang) {
     }
     ?>
 </head>
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition <?php echo $custom_theme['client']['skin']?$custom_theme['client']['skin']:'skin-blue'; ?> layout-top-nav <?php echo $custom_theme['client']['fixed']?'fixed':'';  ?> <?php echo $custom_theme['client']['boxed']?'layout-boxed':''; ?> ">
 <div class="wrapper">
     <div id="container">
         <header class="main-header">

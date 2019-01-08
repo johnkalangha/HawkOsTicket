@@ -33,6 +33,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- theme switcher -->
+    <?php if($custom_theme['client']['choose']) { ?>
     <div id="switcher">
         <div class="switcher box box-primary" id="sw-theme">
             <a href="#" ui-toggle-class="active" target="#sw-theme" class="bg-primary sw-btn">
@@ -74,6 +75,7 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 </div>
 <?php
 if (($lang = Internationalization::getCurrentLanguage()) && $lang != 'en_US') { ?>

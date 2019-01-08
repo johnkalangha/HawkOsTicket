@@ -1,0 +1,22 @@
+{
+    "client" :{
+      "fixed" : true,
+      "boxed" : false,
+      "skin"  : "skin-blue",
+      "choose" : false,
+      "custom_footer": "",
+      "custom_header": ""
+    },
+    "admin" : {
+      "fixed" : true,
+      "boxed" : false,
+      "skin"  : "skin-blue",
+      "choose" : false,
+      "toogle_sidebar" : false,
+      "toogle_r_sidebar_s": false,
+      "toogle_r_sidebar_skin": false,
+      "custom_footer": "",
+      "custom_header": ""
+    },
+    "favicon" : ""
+  }
