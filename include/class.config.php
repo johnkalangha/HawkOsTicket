@@ -1093,11 +1093,27 @@ class OsticketConfig extends Config {
             case 'kb':
                 return $this->updateKBSettings($vars, $errors);
                 break;
+            case 'themes':
+                return $this->updateThemesSettings($vars, $errors);
+                break;
             default:
                 $errors['err']=sprintf('%s - %s', __('Unknown setting option'), __('Get technical help!'));
         }
 
         return false;
+    }
+
+    function updateThemesSettings($vars, &$errors){
+        $vars = Format::htmlchars($vars, true);
+        $TOptions = HelperTheme::getOptions();
+        if(!HelperTheme::validateOptions($vars,$errors) || $errors)
+            return false;
+        $TOptions['client']['choose']= $vars['c_choose']=='1'? true : false;
+        $TOptions['client']['fixed']= $vars['c_fixed']=='1'? true: false;
+        $TOptions['client']['boxed']= $vars['c_boxed']=='1'? true: false;
+        $TOptions['client']['skin']= $vars['c_skin']!=''? $vars['c_skin']:$TOptions['client']['skin'];
+        HelperTheme::setOptions($TOptions);
+        return true;
     }
 
     function updateSystemSettings($vars, &$errors) {

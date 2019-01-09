@@ -97,7 +97,9 @@ if (($lang = Internationalization::getCurrentLanguage()) && $lang != 'en_US') { 
 <!-- AdminLTE for demo purposes -->
 <!--<script src="<?php echo ROOT_PATH; ?>assets/adminlte/js/app.js"></script>-->
 <script src="<?php echo ROOT_PATH; ?>assets/adminlte/js/ui-toggle-class.js"></script> 
+<?php if($custom_theme['client']['choose']) { ?>
 <script src="<?php echo ROOT_PATH; ?>assets/adminlte/js/hawk-app.js"></script>
+<?php } ?>
 <script type="text/javascript">
     getConfig().resolve(<?php
         include INCLUDE_DIR . 'ajax.config.php';
