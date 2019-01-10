@@ -8,7 +8,11 @@ Before installing please make a copy of your osticket instance. This adaptation 
 
 ### Installing
 
-Clone this repo and put all the files in the root of your osticket installation.
+If you only want the version with the client-side theme: [ClientVersion](https://github.com/luffynando/HawkOsTicket/releases/tag/v.1.3.10)
+
+Only download and put all the files in the root of your osticket installation.
+
+If you want the full version with client-side and scp-side: Coming soon.
 
 ### Previews Screenshots
 
@@ -21,6 +25,12 @@ Clone this repo and put all the files in the root of your osticket installation.
 ![s4](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/c4.PNG)
 
 ![s5](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/C5.PNG)
+
+![s6](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/C6.PNG)
+
+![s7](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/C7.PNG)
+
+![s8](https://raw.githubusercontent.com/luffynando/HawkOsTicket/master/docs/C8.PNG)
 
 ## Authors
 
